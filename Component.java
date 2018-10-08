@@ -67,13 +67,8 @@ public class Component {
 		outFile1.println("This is the EQArray for pass #"+pass+":");
 		
 		int counter=10;
-		int tempEQSize=EQSize;
-		while(tempEQSize/10!=0){
-			counter=counter*10;
-			tempEQSize=tempEQSize/10;
-		}
 		
-		for(int i=0;i<EQSize;i++){
+		for(int i=0;i<newLabel; i++){
 			int temp=EQAry[i];
 
 			if(i%25==0){
@@ -96,13 +91,8 @@ public class Component {
 		outFile1.println("This is the EQArray after manageEQAry method: ");
 		
 		int counter=10;
-		int tempEQSize=EQSize;
-		while(tempEQSize/10!=0){
-			counter=counter*10;
-			tempEQSize=tempEQSize/10;
-		}
 		
-		for(int i=0;i<EQSize;i++){
+		for(int i=0;i<newLabel;i++){
 			int temp=EQAry[i];
 
 			if(i%25==0){
@@ -139,8 +129,8 @@ public class Component {
 	
 	void printImage(){
 		outFile2.println(numRows+" "+numCols+" "+minVal+" "+maxVal);
-		for(int i=0;i<numRows+2;i++){
-			for(int j=0;j<numCols+2;j++){
+		for(int i=1;i<numRows+1;i++){
+			for(int j=1;j<numCols+1;j++){
 				if(zeroFramedAry[i][j]<10)
 					outFile2.print(zeroFramedAry[i][j]+"  ");
 				else outFile2.print(zeroFramedAry[i][j]+" ");
@@ -277,8 +267,8 @@ public class Component {
 		for(int i=0;i<size;i++){
 			outFile3.println(CC[i].label);
 			outFile3.println(CC[i].numPixels);
-			outFile3.println(CC[i].minRow+" "+CC[i].minCol);
-			outFile3.println(CC[i].maxRow+" "+CC[i].maxCol);
+			outFile3.println(CC[i].minRow-1+" "+(CC[i].minCol-1));
+			outFile3.println(CC[i].maxRow-1+" "+(CC[i].maxCol-1));
 			outFile3.println();
 		}
 	}
